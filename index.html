@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alouette Radio et Météo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Section principale avec image de fond et widget radio */
+        .main-section {
+            flex: 3;
+            background: url('https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-6/340108575_1044240600312972_7249665680939115451_n.png?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=A0jsqeJvK1EQ7kNvgEGZStx&_nc_zt=23&_nc_ht=scontent-cdg4-1.xx&_nc_gid=ABor34wq-spwTQp_RqsvB9p&oh=00_AYBA1skY2ndLae3M_L_P0-iB2fBEhYEnB8CSOT6QlKnWqQ&oe=67364871') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        /* Position du widget radio dans le coin supérieur droit */
+        .radio-widget {
+		    
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 250px; /* Ajustez la largeur en fonction du widget exact */
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+			
+        }
+
+        /* Bandeau météo défilant */
+        .ticker {
+            flex: 0.8;
+            background-color: #000000;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-text {
+            white-space: nowrap;
+            display: inline-block;
+            animation: scroll 80s linear infinite;
+            padding-left: 100%;
+        }
+
+        /* Animation défilante */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+	
+        <!-- Section principale avec fond d'écran "Alouette Radio" -->
+        <div class="main-section" >
+		
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                <div class="elfsight-app-ac937110-b85c-4eef-9269-b84b4e2126f1" data-elfsight-app-lazy></div>
+				
+        </div>
+        
+        <!-- Bandeau météo défilant -->
+        <div class="ticker">
+		
+            <div class="ticker-text">
+          <div id="cont_e62fd6875fb9ce241575bb4dbf89a997"><script type="text/javascript" async src="https://www.tameteo.com/wid_loader/e62fd6875fb9ce241575bb4dbf89a997"></script></div>
+           	
+			
+       
+
+	   </div>
+    </div>
+
+</body>
+</html>
